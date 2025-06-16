@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail – Mandala Artistry</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fffaf5;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      gap: 40px;
+    }
+    .gallery {
+      flex: 1;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+    }
+    .thumbnails img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .product-info {
+      flex: 1;
+    }
+    .product-info h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .short-desc {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #666;
+    }
+    .price {
+      font-size: 24px;
+      color: #c1441d;
+      margin-bottom: 10px;
+    }
+    .stock {
+      margin-bottom: 15px;
+      color: green;
+      font-weight: bold;
+    }
+    .quantity {
+      margin-bottom: 20px;
+    }
+    .quantity input {
+      width: 60px;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .buttons button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .add-cart {
+      background-color: #333;
+      color: #fff;
+    }
+    .wishlist {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    .purchase-options {
+      display: none;
+      margin-top: 20px;
+    }
+    .purchase-options img {
+      width: 150px;
+      border: 1px solid #ccc;
+    }
+    .purchase-options button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .delivery, .description, .share, .reviews, .return-policy {
+      margin-top: 30px;
+    }
+    h3 {
+      margin-bottom: 10px;
+    }
+    .share-icons a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="gallery">
+      <img src="main-image.jpg" alt="Product Main Image" id="mainImage" />
+      <div class="thumbnails">
+        <img src="thumb1.jpg" onclick="document.getElementById('mainImage').src=this.src" />
+        <img src="thumb2.jpg" onclick="document.getElementById('mainImage').src=this.src" />
+        <img src="thumb3.jpg" onclick="document.getElementById('mainImage').src=this.src" />
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Multi Pictured Clock Mandala – Handcrafted</h1>
+      <div class="short-desc">A Different type of mandala with clock fitted and replaced the romans with your love filled moment pics with dotted edges and layered lotus design.</div>
+      <div class="price">₹1,499 <span style="text-decoration: line-through; color: #999;">₹1,799</span></div>
+      <div class="stock">In Stock – Only 3 left!</div>
+
+      <div class="quantity">
+        <label for="qty">Quantity:</label>
+        <input type="number" id="qty" name="qty" min="1" value="1" />
+      </div>
+
+      <div class="buttons">
+        <button class="buy now">Buy Now</button>
+        <button class="add-cart">Add to Cart</button>
+        <button class="wishlist">❤️ Wishlist</button>
+      </div>
+
+      <div class="purchase-options">
+        <h3>Select a Payment Method:</h3>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div>
+            <img src="gpay-qr.jpg" alt="GPay QR" />
+            <p style="text-align:center;">Scan to Pay via GPay</p>
+          </div>
+          <div>
+            <img src="phonepe-qr.jpg" alt="PhonePe QR" />
+            <p style="text-align:center;">Scan to Pay via PhonePe</p>
+          </div>
+        </div>
+        <br />
+        <a href="upi://pay?pa=yourupi@bank&pn=Mandala%20Artistry&am=1499&cu=INR&tn=Purple%20Feather%20Mandala" target="_blank">
+          <button>Pay via UPI App</button>
+        </a>
+      </div>
+
+      <div class="delivery">
+        <h3>🚚 Delivery Details</h3>
+        <p>Estimated delivery in 5-7 business days.</p>
+      </div>
+
+      <div class="description">
+        <h3>📝 Product Description</h3>
+        <p>
+          Size: 12" x 12"<br>
+          Material: Premium 300 GSM Canvas<br>
+          Customization: Available on request<br>
+          Care: Keep away from moisture and direct sunlight.
+        </p>
+      </div>
+
+      <div class="share">
+        <h3>📤 Share this art</h3>
+        <div class="share-icons">
+          <a href="#">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">Copy Link</a>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <h3>🧾 Reviews</h3>
+        <p>⭐⭐⭐⭐⭐ – "Absolutely stunning! Loved the detailing." – Anjali</p>
+      </div>
+
+      <div class="return-policy">
+        <h3>🔄 Return & Refund Policy</h3>
+        <p>Returns accepted within 7 days if the product is damaged on delivery.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector(".buy.now").addEventListener("click", function () {
+      const section = document.querySelector(".purchase-options");
+      section.style.display = section.style.display === "none" ? "block" : "none";
+    });
+  </script>
+</body>
+</html>
