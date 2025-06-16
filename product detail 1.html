@@ -170,7 +170,8 @@
           </div>
         </div>
         <br />
-        <a onclick="redirectToGPay()" style="background-color: #4285f4; color: white; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer;">
+
+        <button onclick="redirectToGPay()" style="background-color: #4285f4; color: white; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer;">
   Pay with Google Pay
 </button>
 
@@ -219,5 +220,28 @@
       section.style.display = section.style.display === "none" ? "block" : "none";
     });
   </script>
+  <script>
+  function redirectToGPay() {
+    const upiID = "mismic2003@okaxis";
+    const payeeName = "Mandala Artistry";
+    const amount = "1";
+    const note = "Purple Feather Mandala";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+    if (/android/i.test(userAgent)) {
+      const intentLink = `intent://upi/pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end;`;
+      window.location.href = intentLink;
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location.href = upiLink;
+      alert("If Google Pay doesn’t open, please scan the QR or copy the UPI ID to pay.");
+    } else {
+      window.location.href = upiLink;
+    }
+  }
+</script>
+
 </body>
 </html>
